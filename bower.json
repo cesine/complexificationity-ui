@@ -1,0 +1,19 @@
+{
+  "name": "complexificationity-ui",
+  "authors": [],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "rickshaw": "1.6.0-rc.0"
+  }
+}
