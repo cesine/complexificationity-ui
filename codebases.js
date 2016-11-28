@@ -1,7 +1,9 @@
 /**
- * @class The CodeBases Model handles login and logout and
- *        CodeBases locally or remotely.
+ * @class The CodeBases Model
  *
+ * https://bost.ocks.org/mike/miserables/
+ * http://mbostock.github.io/d3/talk/20111116/iris-splom.html
+ * http://benjiec.github.io/scatter-matrix/demo/demo.html
  * @extends Object
  */
 class CodeBases {
@@ -11,6 +13,24 @@ class CodeBases {
    */
   constructor(json) {
     console.log('Constructing CodeBases', json);
+
+    // set up our data series with 50 random data points
+
+    var seriesData = [
+      [],
+      [],
+      []
+    ];
+    var random = new Rickshaw.Fixtures.RandomData(150);
+
+    for (var i = 0; i < 500; i++) {
+      random.addData(seriesData);
+      seriesData[0][i].r = 0 | Math.random() * 2 + 8
+      seriesData[1][i].r = 0 | Math.random() * 5 + 5
+      seriesData[2][i].r = 0 | Math.random() * 8 + 2
+    }
+
+    console.log(seriesData);
 
     this.element = json.element;
 
@@ -23,13 +43,6 @@ class CodeBases {
         color: "#ff9030",
         data: seriesData[0],
         opacity: 0.5
-      }, {
-        color: "#ff4040",
-        data: seriesData[1],
-        opacity: 0.3
-      }, {
-        color: "#4040ff",
-        data: seriesData[2]
       }]
     });
 
